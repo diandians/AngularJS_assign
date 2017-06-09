@@ -10,23 +10,26 @@ function MenuDataService(ApiBasePath, $http) {
   var menu = this;
 
   menu.getAllCategories = function () {
-    var response = $http({
+    return $http({
       method: "GET",
       url: (ApiBasePath + "/categories.json")
+    })
+    .then(function (response) {
+      return response.data;
     });
-
-    return response;
   };
 
   menu.getItemsForCategory = function(categoryShortName) {
-    var response = $http({
+    return $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json"),
       params: {
         category: categoryShortName
       }
+     })
+     .then(function (response) {
+       return response.data.menu_items;
      });
-    return response.data.menu_items;
   };
 }
 

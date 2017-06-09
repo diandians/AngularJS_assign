@@ -9,9 +9,9 @@
 <th class="nosort"></th>
 </thead>
 <tbody>
-<tr ng-repeat="item in categoriesList.categories" ui-sref="categories.itemDetail({categoryShortName: item.short_name})">
+<tr ng-repeat="item in categoriesList.categories">
 <td> {{item.name}} </td>
-<td>{{ item.short_name }}</td>
+<td><a  ui-sref="categories.itemDetail({categoryShortName: item.short_name})">{{ item.short_name }}</a></td>
 <!-- <td>{{item.special_instructions}}</td> -->
 </tr>
 </tbody>
