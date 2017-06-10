@@ -21,7 +21,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // categories list
   .state('categories', {
-    // url: '/categories',
+    url: '/categories',
     templateUrl: 'src/templates/categories.template.html',
     controller: 'CategoriesController as categoriesList',
     resolve: {
