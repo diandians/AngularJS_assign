@@ -1,0 +1,18 @@
+<h3> {{ list.title }} </h3>
+<table class="table table-striped table-hover dataTable responsive display" width="100%">
+<thead>
+<th ng-if="!list.foundNothing()">Short Name</th>
+<th ng-if="!list.foundNothing()">Name</th>
+<th ng-if="!list.foundNothing()">Description</th>
+<th class="nosort" ng-if="!list.foundNothing()"></th>
+</thead>
+<tbody>
+<tr ng-repeat= "item in list.foundItems">
+<td>{{item.short_name}}</td>
+<td>{{item.name}}</td>
+<td>{{item.description}}</td>
+<td><button class="btn btn-default" ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
+</tr>
+</tbody>
+</table>
+<!-- <div class="emptyMessage" ng-if="list.foundNothing()">Nothing found!</div> -->
